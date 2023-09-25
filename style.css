@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,500&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body{
+    background: #151d2f;
+    margin: 1em 0;
+}
+
+.header {
+    display: grid;
+    place-items: center; 
+}
+
+.header h1 {
+    animation: blink 2s infinite;
+    margin-top: 0.5rem;
+}
+
+@keyframes blink {
+    0% { color: #3498db; } 
+    25% { color: #e74c3c; } 
+    50% { color: #2ecc71; }
+    75% { color: #f39c12; } 
+    100% { color: #9b59b6; } 
+}
+
+.header h1{
+    color: #fff;
+}
+
+.logo{
+    width: 10em;
+}
+
+button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #13fc97;
+    color: #151d2f;
+    border-radius: 0.5em;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+
+button:hover{
+    background: #fff;
+    color: #13fc97;
+}
+
+.search-container{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1em;
+    width: 100%;
+    max-width: 50em;
+    margin: 1em auto;
+    padding: 0.5em;
+}
+
+#search-box{
+    padding: 0.75em;
+    border-radius: 0.5em;
+    font-weight: 400;
+}
+
+.loader{
+    display: none;
+    height: 10em;
+    width: 10em;
+    border: 1em solid #2b304d;
+    border-radius: 50%;
+    border-top-color: #13fc97;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    animation: spin 3s infinite;
+}
+
+@keyframes spin{
+    100%{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.container{
+    background: #2b304d;
+    display: flex;
+    padding: 1em;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1.5em;
+    border-radius: 0.5em;
+}
+
+.container img{
+    width: 100%;
+}
+
+.container button{
+    margin-top: 1em;
+    padding: 1em 0;
+}
+
+@media screen and (max-width: 768px){
+    .wrapper{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container{
+        margin: 0.7em;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .wrapper{
+        grid-template-columns: 1fr;
+    }
+}
